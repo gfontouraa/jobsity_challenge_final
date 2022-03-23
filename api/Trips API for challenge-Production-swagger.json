@@ -1,0 +1,65 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "A barebones api for a technical challenge.\nStructure created using Swagger at swagger.io\n",
+    "version" : "1.0.0",
+    "title" : "Trips API for challenge"
+  },
+  "host" : "5f9ckvqgig.execute-api.us-east-1.amazonaws.com",
+  "basePath" : "/Production",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/trips" : {
+      "post" : {
+        "operationId" : "addTrip",
+        "consumes" : [ "application/xml", "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "Trip",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Trip"
+          }
+        }, {
+          "in" : "body",
+          "name" : "Trip",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Trip"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response"
+          },
+          "405" : {
+            "description" : "405 response"
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Trip" : {
+      "type" : "object",
+      "properties" : {
+        "region" : {
+          "type" : "string"
+        },
+        "origin_coord" : {
+          "type" : "string"
+        },
+        "destination_coord" : {
+          "type" : "string"
+        },
+        "datetime" : {
+          "type" : "string"
+        },
+        "datasource" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}
